@@ -9,14 +9,66 @@
         session: "home",
         submitting: false,
     }
+
+    // Form object
+    let form = {
+        title: "Demo Form",
+        subTitle: "This is a demo form",
+        valid: null,
+        items: [
+            {
+                type: "input",
+                label: "Name",
+                icon: "account_box",
+                placeholder: "Your full name",
+                pattern: ".+", // regex pattern
+                modifier: "im", // regex modifier
+                error: "Invlalid input",
+                required: true,
+                valid: null,
+                value: null,
+            },
+            {
+                type: "input",
+                label: "Email",
+                icon: "email",
+                placeholder: "Your email address",
+                pattern: ".+", // regex pattern
+                modifier: "im", // regex modifier
+                error: "Invlalid input",
+                required: true,
+                valid: null,
+                value: null,
+            }
+        ]
+    }
     
     // Vue Data object
     let data = {
         app,
+        form,
+    }
+
+    let validateForm = function(item, form){
+        if (item.required){
+            let regex = new RegExp(item.pattern, item.modifier)
+            if (regex.test(item.value)){
+                item.valid = true
+            }else{
+                item.valid = false
+            }
+        }
+    }
+
+    let submit = function(){
+        alert("Submit function is not ready")
     }
 
     // Vue Methods object
-    let methods = {}
+    let methods = {
+        submit,
+        validateForm,
+    }
 
     // Vue Object
     new Vue({

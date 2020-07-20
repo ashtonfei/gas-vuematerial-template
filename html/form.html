@@ -1,0 +1,30 @@
+<template v-if=" app.session === 'form' ">
+    <div class="md-title">{{form.title}}</div>
+    <div class="md-subhead">{{form.subTitle}}</div>
+    
+    <md-field
+        :class=" item.valid === false ? 'md-invalid' : '' "
+        v-for=" (item, i) in form.items "
+        :key=" 'form-item-' + i ">
+        <label>{{item.label}}</label>
+        <md-input
+            :disabled="app.submitting"
+            :required="item.required"
+            :placeholder="item.placeholder"
+            v-model.trim="item.value"
+            @blur="validateForm(item, form)"
+            @keyup="validateForm(item, form)">
+        </md-input>
+        <md-icon v-if="item.icon">{{item.icon}}</md-icon>
+        <span class="md-error">{{item.error}}</span>
+    </md-field>
+
+    <div>
+        <md-button 
+            class="md-primary"
+            :disabled="app.submitting || !form.valid"
+            @click="submit">
+            Submit
+        </md-button>
+    </div>
+</template>
