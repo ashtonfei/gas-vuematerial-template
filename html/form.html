@@ -6,6 +6,7 @@
         :class=" item.valid === false ? 'md-invalid' : '' "
         v-for=" (item, i) in form.items "
         :key=" 'form-item-' + i ">
+        <md-icon v-if="item.icon">{{item.icon}}</md-icon>
         <label>{{item.label}}</label>
         <md-input
             :disabled="app.submitting"
@@ -15,7 +16,6 @@
             @blur="validateForm(item, form)"
             @keyup="validateForm(item, form)">
         </md-input>
-        <md-icon v-if="item.icon">{{item.icon}}</md-icon>
         <span class="md-error">{{item.error}}</span>
     </md-field>
 

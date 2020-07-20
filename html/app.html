@@ -1,8 +1,54 @@
-<div class="md-layout">
-    <div class="md-layout-item md-size-20 md-small-hide"></div>
-    <div class="md-layout-item md-size-60 md-small-100">
+<template>
+  <div class="page-container">
+    <md-app>
+      <md-app-toolbar class="md-primary" md-elevation="0">
+        <md-button class="md-icon-button" @click="app.menuVisible = !app.menuVisible" v-if="!app.menuVisible">
+          <md-icon>menu</md-icon>
+        </md-button>
+        <span class="md-title">{{app.name}}</span>
+      </md-app-toolbar>
+
+      <md-app-drawer :md-active.sync="app.menuVisible" md-persistent="mini">
+        <md-toolbar class="md-transparent" md-elevation="0">
+          <span>Navigation</span>
+          <div class="md-toolbar-section-end">
+            <md-button class="md-icon-button md-dense" @click="app.menuVisible = !app.menuVisible">
+              <md-icon>keyboard_arrow_left</md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
+
+        <md-list>
+          <md-list-item 
+            @click=" app.session = 'home' "
+            :disabled="app.session === 'home'">
+            <md-icon>home</md-icon>
+            <span class="md-list-item-text">Home</span>
+          </md-list-item>
+
+          <md-list-item 
+            @click=" app.session = 'form' "
+            :disabled="app.session === 'form'">
+            <md-icon>send</md-icon>
+            <span class="md-list-item-text">Form</span>
+          </md-list-item>
+          
+          <md-list-item>
+            <md-icon>more_horiz</md-icon>
+            <span class="md-list-item-text">More features ...</span>
+          </md-list-item>
+
+          <md-list-item href="https://www.youtube.com/ashtonfei" target="_blank">
+            <md-icon>link</md-icon>
+            <span class="md-list-item-text">YouTube</span>
+          </md-list-item>
+        </md-list>
+      </md-app-drawer>
+
+      <md-app-content>
         <?!= include("html/home") ?>
         <?!= include("html/form") ?>
-    </div>
-    <div class="md-layout-item md-size-20 md-small-hide"></div>
-</div>
+      </md-app-content>
+    </md-app>
+  </div>
+</template>

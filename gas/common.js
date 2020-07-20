@@ -3,5 +3,5 @@
  * @param {string} filename 
  */
 function include(filename){
-    return HtmlService.createHtmlTemplateFromFile(filename).evalute().getContent()
+    return HtmlService.createTemplateFromFile(filename).evaluate().getContent()
 }

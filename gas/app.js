@@ -15,8 +15,8 @@ function doGet(e){
     let content = "width=device-width,initial-scale=1,minimal-ui"
     htmlOuput.addMetaTag(name, content)
     
-    // set sand box mode
-    htmlOuput.setSandboxMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+    // set x frame option mode
+    htmlOuput.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
 
     return htmlOuput
 }
