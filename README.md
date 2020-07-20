@@ -3,8 +3,11 @@
 ### Description
 This is a web app template built with google apps script and vue material. Here is the [demo app](https://script.google.com/macros/s/AKfycbzynVMy-scbUNgyZ69_FrzAivYc2HjXfOabe_J9Kkr2VD4z07Po/exec).
 
+### Apps script type
+Google Sheet
+
 ### Use it with clasp
-[GAS-059 How to use clasp](https://github.com/ashtonfei/google-apps-script-projects/tree/GAS-059) or [Watch on YouTube](https://www.youtube.com/ashtonfei)
+[GAS-059 How to use clasp](https://github.com/ashtonfei/google-apps-script-projects/tree/GAS-059) or [Watch on YouTube](https://youtu.be/V-oE2OyvTKM)
 
 ### Make a copy of it form my Google Drive
 [Make a copy](https://docs.google.com/spreadsheets/d/1HyNdpPizBWDr8EbPgj1YnCydOtRRSn5t2RCaNw412QE/copy)
